@@ -1,16 +1,12 @@
 package steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pages.InventoryPage;
 import pages.LoginPage;
 
@@ -19,26 +15,23 @@ import java.time.Duration;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class LoginSteps{
+public class LoginSteps {
     ChromeDriver driver;
-
 
 
     @Given("^I open the page Login$")
     public void iOpenThePageLogin() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver",
-                    "/Users/ergrevegvrg/Downloads/chromedriver-mac-arm64/chromedriver");
-        driver = new ChromeDriver(options);
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
     }
 
     @When("^I fill input user name \"([^\"]*)\"$")
-    public void iFillInputUserName(String usernameValue){
-      LoginPage loginPage = new LoginPage(driver);
-      loginPage.usernameInputField.sendKeys(usernameValue);
+    public void iFillInputUserName(String usernameValue) {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.usernameInputField.sendKeys(usernameValue);
     }
 
     @Then("^I fill input password \"([^\"]*)\"$")
@@ -73,13 +66,13 @@ public class LoginSteps{
     }
 
     @And("^error message with text \"([^\"]*)\" is displayed$")
-    public void errorMessageWithTextIsDisplayed(String expectedText)  {
+    public void errorMessageWithTextIsDisplayed(String expectedText) {
         LoginPage loginPage = new LoginPage(driver);
         assertEquals(expectedText, loginPage.errorMessage.getText());
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }
