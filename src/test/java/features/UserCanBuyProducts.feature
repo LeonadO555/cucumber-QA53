@@ -12,12 +12,14 @@ Feature: UserCanBuyProducts.feature
     Then I check that selected product opened
     And I click "Add to cart" button
     Then I check count of added products on the icon card changed
-    And  I click "Remove" button on the Inventory page
-    Then I check count of added products on the icon card changed
+    And  I click "Remove" button on product page
+    And  I click "Back to products" button
     And I add product free Inventory page
     And I click "Back to products" button
-
+    And  I click "Remove" button on the Inventory page
+    Then I check that count of added products on the icon card is not displayed
     And I add product free Inventory page
     Then I open the cart
     Then I check that products were added to cart
+    And I click "Remove" button on the cart page
 
