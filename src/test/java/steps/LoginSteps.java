@@ -1,5 +1,6 @@
 package steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -44,6 +45,10 @@ public class LoginSteps extends  BaseSteps{
         loginPage.errorMessage.shouldHave(text(expectedText));
     }
 
+    @Then("^I open the cart$")
+    public void iOpenTheCart() {
+
+    }
 }
 
 
