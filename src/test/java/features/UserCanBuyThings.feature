@@ -36,3 +36,18 @@ Feature: UserCanBuyProducts
     Then I check that "Checkout: Complete!" page opened
     And I click on "Back Home" button
 
+    #Halyna Voronkova
+  #Michail Gadatzki
+  #Elena Militia
+    # Inventory page
+    # Product page
+
+  #Irasp Andreasian
+  #Natalie K
+    # Cart page
+    # Checkout: Your Information page
+
+  #Aygul
+  #Irina Ovsianko
+    # Checkout: Overview page
+    # Checkout: Complete! page
