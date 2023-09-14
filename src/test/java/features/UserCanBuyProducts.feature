@@ -20,6 +20,17 @@ Feature: UserCanBuyProducts.feature
     Then I check that count of added products on the icon card is not displayed
     And I add product free Inventory page
     Then I open the cart
+    And I click on "Continue Shopping" button
     Then I check that products were added to cart
     And I click "Remove" button on the cart page
+    And I click "Checkout"button
+    Then I Check that "Checkout:Your Information" opened
+    And I set up "Checkout" form
+    And I click on "Continue" button
+    Then I check that "Checkout: Overview" page opened
+    Then I check that selected product correct
+    And I click on "Finish" button
+    Then I check that "Checkout: Complete!" page opened
+    And I click on "Back Name" button
+
 

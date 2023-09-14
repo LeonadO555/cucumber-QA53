@@ -1,7 +1,6 @@
 Feature: Login
 
-  Background:
-    Given I open the page Login
+
 
   @success_login
   Scenario: Success login
@@ -16,7 +15,6 @@ Feature: Login
     When I fill input user name "<username>"
     Then I fill input password "<password>"
     And I click on button Login
-    Then error message is displayed
     And error message with text "<errorMessageText>" is displayed
     Examples:
       | username      | password    |errorMessageText                                                         |
