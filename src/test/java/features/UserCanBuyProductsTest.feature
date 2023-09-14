@@ -35,7 +35,7 @@ Feature: UserCanBuyProducts
     Then I check that "Checkout: Complete!" page opened
     And I click on "Back Home" button
 
-  # Halyna Voronkova
+  #Halyna Voronkova
   #Michail Gadatzki
   #Elena Militia
     # Inventory page

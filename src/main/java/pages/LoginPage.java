@@ -14,5 +14,4 @@ public class LoginPage {
     public SelenideElement loginButton = $(byId("login-button"));
     public SelenideElement errorMessage = $(byTagName("h3"));
 
-
 }
