@@ -20,10 +20,44 @@ Feature: UserCanBuyProducts
     And I click "Remove" button on the Inventory page
     Then I check that count of added products on the icon card is not displayed
     And I add product from Inventory page
-    And I add product from Inventory page
     And I open the cart
+    And I click on "Continue Shopping" button
+    And I add product from Inventory page
     Then I check that products added to cart
     And I click "Remove" button on the cart page
+    And I click "Checkout" button
+    Then I check that "Checkout: Your Information" opened
+    And I set up "Checkout" form
+    And I click on "Continue" button
+    Then I check that "Checkout: Overview" page opened
+    Then I check that selected product correct
+    And I click on "Finish" button
+    Then I check that "Checkout: Complete!" page opened
+    And I click on "Back Home" button
+
+  # Halyna Voronkova
+  #Michail Gadatzki
+  #Elena Militia
+    # Inventory page
+    # Product page
+
+  #Irasp Andreasian
+  #Natalie K
+    # Cart page
+    # Checkout: Your Information page
+
+  #Aygul
+  #Irina Ovsianko
+    # Checkout: Overview page
+    # Checkout: Complete! page
+
+
+
+
+
+
+
+
 
 
 
