@@ -7,9 +7,8 @@ import cucumber.api.java.en.Then;
 public class CartSteps extends BaseSteps {
 
 
-
     @And("^I click on \"([^\"]*)\" button$")
-    public void iClickContinueShoppingButton (String arg0){
+    public void iClickContinueShoppingButton(String arg0) {
         //cartSteps.iClickContinueShoppingButton;
     }
 
@@ -30,3 +29,4 @@ public class CartSteps extends BaseSteps {
         throw new PendingException();
 
     }
+}
